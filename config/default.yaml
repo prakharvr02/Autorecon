@@ -1,0 +1,12 @@
+# AutoRecon Configuration
+scanning:
+  top_ports: 100
+  intensity: normal  # light/normal/aggressive
+
+shodan:
+  enabled: false
+  api_key: ""
+
+reporting:
+  formats: ["html", "json"]
+  output_dir: "./reports"
