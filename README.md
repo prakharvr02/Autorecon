@@ -27,7 +27,11 @@ pip install -r requirements.txt
 ```
 ## Usage
 ```
-python -m src.main -d example.com
+# Basic run (without Shodan)
+python autorecon.py example.com -o example_scan
+
+# With Shodan integration
+python autorecon.py example.com -o example_scan --shodan-key YOUR_SHODAN_API_KEY
 ```
 
 ## requirements.txt
@@ -40,6 +44,35 @@ python-nmap==0.7.1
 PyYAML==6.0
 colorama==0.4.6
 ```
+## Sample Output
+```
+[*] Running subdomain enumeration on example.com
+[+] Subfinder found 15 subdomains
+[+] Amass found 8 new subdomains
+[*] Total unique subdomains found: 23
+
+[*] Starting port scanning
+[*] Scanning mail.example.com
+[*] Scanning shop.example.com
+...
+[+] Port scanning completed
+
+[*] Checking Shodan for exposed services
+[+] Shodan found 3 results for example.com
+[+] Shodan found 1 results for mail.example.com
+...
+
+[*] Checking for common vulnerabilities
+[*] Found exposed admin interface at http://shop.example.com/admin
+[*] Found exposed .env file at http://dev.example.com/.env
+
+[*] Generating reports
+[+] JSON report saved to results/report_example.com.json
+[+] HTML report saved to results/report_example.com.html
+
+[+] AutoRecon completed successfully!
+```
+
 ## setup.py
 For package installation
 ```
