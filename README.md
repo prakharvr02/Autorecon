@@ -21,7 +21,7 @@ Automated reconnaissance and vulnerability scanning tool for pentesters.
 
 ## Installation
 ```
-git clone https://github.com/yourusername/autorecon.git
+git clone https://github.com/prakharvr02/Autorecon.git
 cd autorecon
 pip install -r requirements.txt
 ```
@@ -166,7 +166,7 @@ Open Source Ecosystem:
 For Contributors
 ```
 # Setup development environment
-git clone https://github.com/yourusername/autorecon.git
+git clone https://github.com/prakharvr02/Autorecon.git
 cd autorecon
 pip install -e .[dev]
 pytest tests/
