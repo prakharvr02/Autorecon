@@ -1,0 +1,17 @@
+name: Tests
+on: [push, pull_request]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Set up Python
+        uses: actions/setup-python@v2
+      - name: Install dependencies
+        run: |
+          pip install -r requirements.txt
+          sudo apt-get install nmap
+      - name: Run tests
+        run: |
+          python -m pytest tests/
